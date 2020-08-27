@@ -44,9 +44,10 @@ async function deletePhoto(req,res){
 
 
 async function updatePhoto(req,res){
-    const {id} = req.params
+    const id = req.params.id
     const { title,description}  = req.body
-    const updatep = await Photo.findByIdAndUpdate(id,{title,description},{new : true})
+    const updatep = await Photo.findByIdAndUpdate(id , {title,description}, {new : true})
+    console.log(updatep);
     return res.json({
         message: 'Successfully updated',
         updatep

@@ -8,7 +8,7 @@ const fs = require('fs-extra')
 const { v4: uuidv4 } = require('uuid');
 
 const storage = multer.diskStorage({
-    destination: path.join(__dirname, '../uploads'), //lo obtine desde la raiz, ruta absoluta
+    destination:  'uploads', //lo obtine desde la raiz, ruta absoluta
     filename: (req, file, cb) => {
         cb(null, uuidv4() + '-' + Date.now() + path.extname(file.originalname))
     }
@@ -16,7 +16,7 @@ const storage = multer.diskStorage({
 const uploadImage = multer({
     storage,
     limits: { fileSize: 1000000 }
-}).single('imagen')
+}).single('image')
 /*
 router.post('/', (req, res) => {
     uploadImage(req, res, (err) => {
