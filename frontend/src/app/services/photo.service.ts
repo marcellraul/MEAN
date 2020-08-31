@@ -14,7 +14,7 @@ export class PhotoService {
   createPhoto (title: string, description: string, photo: File){
     const fd = new FormData()
     fd.set('title',title)
-    fd.append('description', description)
+    fd.set('description', description)
     fd.append('image', photo)
     return this.http.post(this.URI,fd)
 
@@ -36,6 +36,6 @@ export class PhotoService {
 
   updatePhoto(id: string, title: string, description:string){
     return this.http.put(`${this.URI}/${id}`, {title,description})
-
   }
+  
 }

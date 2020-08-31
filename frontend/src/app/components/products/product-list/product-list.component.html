@@ -1,0 +1,41 @@
+<!--
+
+  <h2 class="text-center">Products</h2>
+<div class="card">
+  <table class="table table-hover table-striped">
+    <thead>
+      <tr>
+        <th scope="col" class="font-weight-bold  ">Nombre</th>
+        <th scope="col" class="font-weight-bold  ">Description</th>
+        <th scope="col" class="font-weight-bold  ">Type</th>
+        <th scope="col" class="font-weight-bold  ">Status</th>
+
+      </tr>
+    </thead>
+    <tbody>
+
+      <tr class="table-ligth" *ngFor="let product of products">
+        <td>{{product.nombre}}</td>
+        <td>{{product.description}}</td>
+        <td>{{product.tipo}}</td>
+        <td>{{product.estado}}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+
+<div class="row">
+  <div class="col-xl-3 col-md-4 col-sm-6 col-12 p-4" *ngFor="let product of products">
+    <div class="card border-success mb-3 card-photo-list rounded " (click)="selectedCard(product._id)">
+      <div class="card-header ">
+        <h4 class="text-center">{{product.nombre}}</h4>
+      </div>
+
+      <div class="card-body">
+        <p class="card-text">{{product.description}}</p>
+      </div>
+    </div>
+  </div>
+</div>
+-->

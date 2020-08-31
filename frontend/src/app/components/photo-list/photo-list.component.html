@@ -1,13 +1,23 @@
-
-
-<div class="row">
-    <div class="col-xl-3 col-md-4 col-sm-6 col-12 p-4"  *ngFor="let photo of photos">
-        <div class="card border-success mb-3 card-photo-list  "  (click)="selectedCard(photo._id)">
-            <div class="card-header "><h4 class="text-center">{{photo.title}}</h4></div>
-            <img [src]=" 'http://localhost:3000/' + photo.imagePath" class="img-card-top w-100">
-            <div class="card-body">
-              <p class="card-text">{{photo.description}}</p>
-            </div>
-          </div>
+<div class="container" *ngIf="!photos; else main_content">
+  <div class="text-center">
+    <div class="spinner-border" role="status">
+      <span class="sr-only">Loading...</span>
     </div>
+  </div>
 </div>
+
+<ng-template #main_content>
+  <div class="row">
+    <div class="col-xl-3 col-md-4 col-sm-6 col-12 p-4" *ngFor="let photo of photos">
+      <div class="card border-success mb-3 card-photo-list  " (click)="selectedCard(photo._id)">
+        <div class="card-header ">
+          <h4 class="text-center">{{photo.title}}</h4>
+        </div>
+        <img [src]=" 'http://localhost:3000/' + photo.imagePath" class="img-card-top w-100">
+        <div class="card-body">
+          <p class="card-text">{{photo.description}}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</ng-template>

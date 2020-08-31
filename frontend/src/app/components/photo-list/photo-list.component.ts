@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {PhotoService} from '../../services/photo.service'
 import {Router} from '@angular/router'
+import {Photo} from '../../interfaces/Photo'
 
 @Component({
   selector: 'app-photo-list',
@@ -8,7 +9,7 @@ import {Router} from '@angular/router'
   styleUrls: ['./photo-list.component.css']
 })
 export class PhotoListComponent implements OnInit {
-
+  photo: Photo
   photos = []
   constructor( private photoService: PhotoService, private router : Router) { }
 
@@ -17,6 +18,7 @@ export class PhotoListComponent implements OnInit {
       .subscribe( 
         res => {
           this.photos = res,
+          
           console.log(res)},
         err => console.log(err))
   }

@@ -2,10 +2,19 @@
 const {Schema,model}=require('mongoose')
 
 const productsSchema = new Schema({
-    codigo :{type: String},
+    //codigo :{type: String,trim: true},
     nombre :{ type:String},
     description :{type:String},
-    estado :{ type:String},
+    tipo: {type:String},
+    
+    estado :{ type:String, default:"Activo"},
+
+    /*imagesPath: [{
+        imagePath: {
+           type: String,
+           
+        }
+    }]*/
     },
     {
         timestamps: true

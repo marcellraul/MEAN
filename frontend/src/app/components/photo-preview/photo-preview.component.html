@@ -1,9 +1,15 @@
-<div class="row" *ngIf="!photo; else main_content">
-    <h3> Loading...</h3>
+<div class="container" *ngIf="!photo; else main_content">
+    <div class="text-center">
+        <div class="spinner-border" role="status">
+            <span class="sr-only">Loading...</span>
+        </div>
+    </div>
 </div>
 
 <ng-template #main_content>
-    <div class="row">
+    <button (click)="onClick()" type="button" class="btn btn-outline-info btn-sm rounded " style="transform: rotate(180deg);" > <svg class="bi bi-chevron-left " width="32" height="32" viewBox="0 0 20 20" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M6.646 3.646a.5.5 0 01.708 0l6 6a.5.5 0 010 .708l-6 6a.5.5 0 01-.708-.708L12.293 10 6.646 4.354a.5.5 0 010-.708z"/></svg>
+    </button>
+    <div class="row container">
         <div class="col-md-7">
             <div class="card">
                 <img [src]=" 'http://localhost:3000/' + photo.imagePath" class="img-fluid ">
@@ -19,13 +25,13 @@
                     </div>
                     <div class="form-group">
                         <textarea name="" #description cols="5" rows="5" placeholder="Description" class="form-control"
-                            [value]="photo.description" ></textarea>
+                            [value]="photo.description"></textarea>
                     </div>
                     <button type="submit" class=" mt-2 btn btn-success btn-block">Update</button>
                 </div>
             </form>
         </div>
+        <button (click)="deletePhoto(photo._id)" class="btn btn-danger">Delete</button>
     </div>
-    <button (click)="deletePhoto(photo._id)" class="btn btn-danger">Delete</button>
 
 </ng-template>

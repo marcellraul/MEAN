@@ -3,13 +3,12 @@
 const Products = require('../models/products')
 
 async function createProducts ( req, res){
-    const { nombre,description,estado }  = req.body
+    const { nombre,tipo,description, }  = req.body
     const newproducts = {
         //codigo : codigo,
         nombre: nombre,
-        description: description,
-        estado: estado
-    }
+        tipo:tipo,
+        description: description,  }
     const p = new Products(newproducts)
     await p.save()
     console.log('Saving Products')
@@ -42,8 +41,8 @@ async function deleteProduct(req,res){
 
 async function updateProduct(req,res){
     const {id} = req.params
-    const { nombre,description,estado }  = req.body
-    const updatep = await Products.findByIdAndUpdate(id,{nombre,description,estado},{new : true})
+    const { nombre,tipo,description,estado }  = req.body
+    const updatep = await Products.findByIdAndUpdate(id,{nombre,description,tipo,estado},{new : true})
     return res.json({
         message: 'Successfully updated',
         updatep

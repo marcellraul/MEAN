@@ -3,7 +3,7 @@ import {ActivatedRoute, Router} from '@angular/router'
 import { Route } from '@angular/compiler/src/core';
 import {PhotoService} from '../../services/photo.service'
 import {Photo} from '../../interfaces/Photo'
-
+import { Location } from '@angular/common';
 @Component({
   selector: 'app-photo-preview',
   templateUrl: './photo-preview.component.html',
@@ -15,9 +15,14 @@ export class PhotoPreviewComponent implements OnInit {
   constructor(
     private activeRouter : ActivatedRoute,
     private router : Router,
-    private photoService: PhotoService
+    private photoService: PhotoService,
+    private location: Location
   ) { }
 
+ 
+  onClick() {
+      this.location.back();
+  }
   ngOnInit(): void {
     this.activeRouter.params.subscribe(params =>{ 
       this.id = params['id'],

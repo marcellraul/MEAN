@@ -1,0 +1,8 @@
+.card-photo-list{
+    cursor: pointer;
+}
+
+.card-photo-list:hover {
+    border : 2px solid rgb(15, 1, 1)
+    
+}

@@ -1,0 +1,40 @@
+
+<!--
+
+    <div class="row" *ngIf="!product; else main_content">
+    <h3> Loading...</h3>
+</div>
+
+<ng-template #main_content>
+    <div class="row">
+        <div class="col-md-5">
+            <form (submit)="updateProduct(nombre,tipo,description)" class="card">
+                <h3 class="card-header  text-center">Photo Upload</h3>
+                <div class="card-body">
+                    <div class="form-group">
+                        <input type="text" class="form-control" placeholder="Product´s Title"
+                            [value]="product.nombre" #nombre>
+                    </div>
+                    <div class="form-group">
+                        <label style="position: relative; left:7%;" for="exampleSelect1">Type Product</label>
+                        <select class="form-control custom-select" id="exampleSelect1" #tipo [value]="product.tipo">
+                            <option>Select</option>
+                            <option>National</option>
+                            <option>Import</option>
+                            <option>Good</option>
+                            <option>Bad</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <textarea name="" #description cols="5" rows="5" placeholder="Description" class="form-control"
+                            [value]="product.description" ></textarea>
+                    </div>
+                    <button type="submit" class=" mt-2 btn btn-success btn-block">Update</button>
+                </div>
+            </form>
+        </div>
+    </div>
+    <button (click)="deleteProduct(product._id)" class="btn btn-danger">Delete</button>
+
+</ng-template>
+-->
