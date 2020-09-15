@@ -1,5 +1,5 @@
 
-# MEAN-auth
+# MEAN
 
 ![](./screenshot.png)
 
